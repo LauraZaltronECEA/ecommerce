@@ -394,7 +394,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.Data.Sqlite": "10.0.7",
-          "Newtonsoft.Json": "13.0.4"
+          "Newtonsoft.Json": "13.0.4",
+          "api.models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/api.services.dll": {}
