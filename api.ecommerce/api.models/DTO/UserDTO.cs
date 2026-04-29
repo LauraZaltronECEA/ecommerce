@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.DTO
 {
-    internal class UserDTO
+    public class UserDTO
     {
+        public required string Username { get; set; }
+        public required string Password { get; set; }
     }
 }
