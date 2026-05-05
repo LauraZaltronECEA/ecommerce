@@ -13,7 +13,9 @@ namespace api.services.v1
             GeneralResponse result = new GeneralResponse();
 
             //traigo el carrito del user con precios
-            string cartQuery = $"select c.product_id, c.quantity, p.price from cart c inner join products p on c.product_id = p.id where c.user_id = {userId}";
+            string cartQuery = $"select c.product_id, c.quantity, p.price " +
+                $"from cart c inner join products p on c.product_id = p.id " +
+                $"where c.user_id = {userId}";
 
             string cartJson = SqliteHandler.GetJson(cartQuery);
 
@@ -35,7 +37,8 @@ namespace api.services.v1
 
             //Inserto la compra
             string fecha = DateTime.Now.ToString();
-            string saleQuery = $"insert into sale(user_id, total, fecha) values({userId}, {total.ToString(System.Globalization.CultureInfo.InvariantCulture)}, '{fecha}')";
+            string saleQuery = $"insert into sale(user_id, total, fecha) " +
+                $"values({userId}, {total.ToString(System.Globalization.CultureInfo.InvariantCulture)}, '{fecha}')";
             SqliteHandler.Exec(saleQuery);
 
             //Obtengo id de la compra recien insertada
@@ -51,7 +54,9 @@ namespace api.services.v1
                 SqliteHandler.Exec(detalleQuery);
 
                 // Descuento el stock
-                string stockQuery = $"update products set stock = stock - {item.quantity} where id ={item.product_id}";
+                string stockQuery = $"update products " +
+                    $"set stock = stock - {item.quantity} " +
+                    $"where id ={item.product_id}";
                 SqliteHandler.Exec(stockQuery);
             }//fin foreach
 
