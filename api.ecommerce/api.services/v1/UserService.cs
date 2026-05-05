@@ -30,8 +30,8 @@ namespace api.services.v1
 
             string json = SqliteHandler.GetJson(query);
 
-            // Inicializar los miembros requeridos 'Mensaje', 'Token' y 'FechaLogin' en el inicializador de objeto.
-            LoginResponse result = new LoginResponse
+            // Simplificado con 'new()'
+            LoginResponse result = new()
             {
                 Mensaje = string.Empty,
                 Token = string.Empty,
@@ -60,15 +60,16 @@ namespace api.services.v1
             result.FechaLogin = DateTime.Now.ToString();
 
             // Generar token JWT
-            JwtHandler jwt = new JwtHandler(_configuration);
+            JwtHandler jwt = new(_configuration);
             result.Token = jwt.CrearJWT(userDb.Username,userDb.Id,userDb.Name);
 
             return await Task.FromResult(result);
         }//fin login
 
-        public async Task<GeneralResponse> Register(UserDTO user) 
+        public async Task<GeneralResponse> Register(UserRegisterDTO user) 
         {
-            GeneralResponse result = new GeneralResponse();
+            // Simplificado con 'new()'
+            GeneralResponse result = new();
 
             string checkQuery = $"SELECT * FROM Users WHERE username = '{user.Username}'";
             string checkJson = SqliteHandler.GetJson(checkQuery);
@@ -92,6 +93,5 @@ namespace api.services.v1
 
             return await Task.FromResult(result);
         }//fin register
-
     }
 }

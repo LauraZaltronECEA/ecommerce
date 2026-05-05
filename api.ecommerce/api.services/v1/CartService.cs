@@ -9,9 +9,9 @@ namespace api.services.v1
     {
         public async Task<string> GetCart(int userId)
         {
-            string query = $"select c.id, c.user_id, c.product_id, c.quantity, p.product_name, p.price" +
+            string query = $"select c.id, c.user_id, c.product_id, c.quantity, p.product_name, p.price " +
                 $"from cart c inner join products p on c.product_id = p.id" +
-                $"where c.user_id = {userId}";
+                $" where c.user_id = {userId}";
             return await Task.FromResult(SqliteHandler.GetJson(query));
         }
         public async Task<GeneralResponse> AddToCart(CartDTO item)
