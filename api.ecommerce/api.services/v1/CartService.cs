@@ -26,14 +26,15 @@ namespace api.services.v1
             string query;
             if (checkJson == "[]")
             {
-                //Si existe, sumo la cantidad(quantity)
-                query = $"update cart set quantity = quantity + { item.Quantity} " +
-                    $"where user_id = { item.User_Id } and product_id = { item.Product_Id }";
+                query = $"insert into cart(user_id, product_id, quantity) " +
+                $"values({item.User_Id}, {item.Product_Id}, {item.Quantity})";
             }
             else
             {
-                query = $"insert into cart(user_id, product_id, quantity) " +
-                    $"values({ item.User_Id}, { item.Product_Id}, { item.Quantity})";
+                //Si existe, sumo la cantidad(quantity)
+                query = $"update cart set quantity = quantity + {item.Quantity} " +
+                    $"where user_id = {item.User_Id} and product_id = {item.Product_Id}";
+        
             }
 
             bool success = SqliteHandler.Exec(query);

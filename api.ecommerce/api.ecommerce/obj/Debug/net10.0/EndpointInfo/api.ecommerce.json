@@ -148,7 +148,7 @@
         }
       }
     },
-    "/api/compra/Confirm/{userId}": {
+    "/api/sale/Confirm/{userId}": {
       "post": {
         "tags": [
           "Sale"
@@ -171,7 +171,7 @@
         }
       }
     },
-    "/api/compra/GetByUser/{userId}": {
+    "/api/sale/GetByUser/{userId}": {
       "get": {
         "tags": [
           "Sale"

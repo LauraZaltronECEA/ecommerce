@@ -64,38 +64,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "api.ecommerce.Controllers.v1.SaleController",
-    "Method": "Confirm",
-    "RelativePath": "api/compra/Confirm/{userId}",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "api.ecommerce.Controllers.v1.SaleController",
-    "Method": "GetByUser",
-    "RelativePath": "api/compra/GetByUser/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "api.ecommerce.Controllers.v1.ProductController",
     "Method": "GetAll",
     "RelativePath": "api/products/GetAll",
@@ -115,6 +83,38 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.ecommerce.Controllers.v1.SaleController",
+    "Method": "Confirm",
+    "RelativePath": "api/sale/Confirm/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.ecommerce.Controllers.v1.SaleController",
+    "Method": "GetByUser",
+    "RelativePath": "api/sale/GetByUser/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }
