@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.Entities
 {
-    internal class Sale_Information
+    public class Sale_Information
     {
+        public int Id { get; set; }
+        public int Sale_Id { get; set; }
+        public int Product_Id { get; set; }
+
+        public int Quantity { get; set; }
+
+        public decimal Unit_Price { get; set; }
     }
 }

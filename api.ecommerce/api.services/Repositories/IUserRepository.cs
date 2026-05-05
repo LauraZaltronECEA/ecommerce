@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using api.models.DTO;
+using api.models.Responses;
 
 namespace api.services.Repositories
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     {
+        Task<LoginResponse> Login(UserDTO user);
+        Task<GeneralResponse> Register(UserDTO user);
     }
 }
+

@@ -6,7 +6,7 @@ using System.Data;
 using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 
-namespace servicios.Handlers
+namespace api.services.Handlers
 {
     public class SqliteHandler
     {

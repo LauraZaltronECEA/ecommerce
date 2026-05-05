@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.Entities
 {
-    internal class Sale
+    public class Sale
     {
+        public int Id { get; set; }
+        public int User_Id { get; set; }
+
+        public decimal Total { get; set; }
+
+        public string Date { get; set; }
     }
 }

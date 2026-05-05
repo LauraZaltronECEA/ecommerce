@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.Responses
 {
-    internal class LoginResponse
+    public class LoginResponse
     {
+        public int Codigo { get; set; }
+
+        public required string Mensaje { get; set; }
+        public bool Estado { get; set; }
+
+        public required string Token { get; set; }
+
+        public required string FechaLogin { get; set; }
     }
 }

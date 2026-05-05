@@ -1,10 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.Entities
 {
-    internal class Cart
+    public class Cart
     {
+        public int Id { get; set; }
+        public int User_Id { get; set; }
+
+        public int Product_Id { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

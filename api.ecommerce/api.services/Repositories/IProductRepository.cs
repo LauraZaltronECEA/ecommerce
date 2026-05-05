@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 
 namespace api.services.Repositories
 {
-    internal interface IProductRepository
+    public interface IProductRepository
     {
+        Task<string> GetProducts();
+        Task<string> GetProductById(int id);
     }
 }

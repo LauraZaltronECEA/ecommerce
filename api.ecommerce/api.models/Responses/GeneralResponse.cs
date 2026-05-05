@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace api.models.Responses
 {
-    internal class GeneralResponse
+    public class GeneralResponse
     {
+        public int Codigo { get; set; }
+        public string Mensaje { get; set; }
+        public bool Estado { get; set; }
     }
 }
