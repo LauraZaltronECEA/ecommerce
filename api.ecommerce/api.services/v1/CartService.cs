@@ -9,9 +9,9 @@ namespace api.services.v1
     {
         public async Task<string> GetCart(int userId)
         {
-            string query = $"select c.id, c.user_id, c.product_id, c.quantity, p.product_name, p.price" +
+            string query = $"select c.id, c.user_id, c.product_id, c.quantity, p.product_name, p.price " +
                 $"from cart c inner join products p on c.product_id = p.id" +
-                $"where c.user_id = {userId}";
+                $" where c.user_id = {userId}";
             return await Task.FromResult(SqliteHandler.GetJson(query));
         }
         public async Task<GeneralResponse> AddToCart(CartDTO item)
@@ -26,14 +26,15 @@ namespace api.services.v1
             string query;
             if (checkJson == "[]")
             {
-                //Si existe, sumo la cantidad(quantity)
-                query = $"update cart set quantity = quantity + { item.Quantity} " +
-                    $"where user_id = { item.User_Id } and product_id = { item.Product_Id }";
+                query = $"insert into cart(user_id, product_id, quantity) " +
+                $"values({item.User_Id}, {item.Product_Id}, {item.Quantity})";
             }
             else
             {
-                query = $"insert into cart(user_id, product_id, quantity) " +
-                    $"values({ item.User_Id}, { item.Product_Id}, { item.Quantity})";
+                //Si existe, sumo la cantidad(quantity)
+                query = $"update cart set quantity = quantity + {item.Quantity} " +
+                    $"where user_id = {item.User_Id} and product_id = {item.Product_Id}";
+        
             }
 
             bool success = SqliteHandler.Exec(query);

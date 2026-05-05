@@ -6,7 +6,7 @@ namespace api.services.Repositories
     public interface IUserRepository
     {
         Task<LoginResponse> Login(UserDTO user);
-        Task<GeneralResponse> Register(UserDTO user);
+        Task<GeneralResponse> Register(UserRegisterDTO user);
     }
 }
 

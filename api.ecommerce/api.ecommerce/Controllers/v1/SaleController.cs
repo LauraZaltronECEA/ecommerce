@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api.ecommerce.Controllers.v1
 {
-    [Route("api/compra")]
+    [Route("api/sale")]
     [ApiController]
     [Authorize]
     public class SaleController : ControllerBase
