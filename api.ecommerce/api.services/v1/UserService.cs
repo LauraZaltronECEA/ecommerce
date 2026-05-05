@@ -30,7 +30,15 @@ namespace api.services.v1
 
             string json = SqliteHandler.GetJson(query);
 
-            LoginResponse result = new LoginResponse();
+            // Inicializar los miembros requeridos 'Mensaje', 'Token' y 'FechaLogin' en el inicializador de objeto.
+            LoginResponse result = new LoginResponse
+            {
+                Mensaje = string.Empty,
+                Token = string.Empty,
+                FechaLogin = string.Empty,
+                Estado = false,
+                Codigo = 0
+            };
 
             if (json == "[]")
             { 
