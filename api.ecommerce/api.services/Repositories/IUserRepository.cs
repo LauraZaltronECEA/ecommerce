@@ -7,6 +7,9 @@ namespace api.services.Repositories
     {
         Task<LoginResponse> Login(UserDTO user);
         Task<GeneralResponse> Register(UserRegisterDTO user);
+        Task<string> GetAllUsers();
+        Task<GeneralResponse> DeleteUser(int id);
+
     }
 }
 
