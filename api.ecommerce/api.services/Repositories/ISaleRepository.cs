@@ -6,5 +6,7 @@ namespace api.services.Repositories
     {
         Task<GeneralResponse> ConfirmSale(int user_id);
         Task<string> GetSaleByUser(int user_id);
+
+        Task<string> GetAllSales();
     }
 }

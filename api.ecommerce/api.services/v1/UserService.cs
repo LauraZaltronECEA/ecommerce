@@ -90,5 +90,26 @@ namespace api.services.v1
 
             return await Task.FromResult(result);
         }//fin register
+
+        //Super User Methods
+        public async Task<string> GetAllUsers()
+        {
+            string query = "select id, username, name, email from users";
+            return await Task.FromResult(SqliteHandler.GetJson(query));
+        }
+
+        public async Task<GeneralResponse> DeleteUser(int id)
+        {
+            GeneralResponse result = new GeneralResponse();
+            string query = $"delete from users where id = {id}";
+            bool success = SqliteHandler.Exec(query);
+            result.Estado = success;
+            result.Codigo = success ? 1 : 0;
+            result.Mensaje = success ? "Usuario eliminado" : "Error al eliminar";
+            return await Task.FromResult(result);
+        }
+
+
+
     }
 }

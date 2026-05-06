@@ -75,5 +75,12 @@ namespace api.services.v1
             string query = $"select * from sale where user_id = {userId}";
             return await Task.FromResult(SqliteHandler.GetJson(query));
         }
+
+        public async Task<string> GetAllSales()
+        {
+            string query = "select s.*, u.username from sale s inner join users u on s.user_id = u.id";
+            return await Task.FromResult(SqliteHandler.GetJson(query));
+        }
+
     }
 }
